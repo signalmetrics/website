@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Learn how to re-use HTML snippets with Includes",
+    "excerpt": "Includes are HTML snippets that can be reused throughout a website. They are stored in the \"includes\" directory and can include components like navigations, footers, and hero sections.",
+    "coverImage": "/assets/images/posts/cover3.webp",
+    "date": "2023-03-18T05:35:07.322Z",
+    "dateFormatted": "March 18th 2023",
+    "authorName": "Carl Peterson",
+    "authorPicture": "/assets/images/authors/carl.jpg",
+    "ogImageUrl": "/assets/images/posts/cover3.webp",
+    "content": "rad man",
+    "link": "/posts/includes"
+  }
+]

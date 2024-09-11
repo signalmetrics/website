@@ -1,0 +1,42 @@
+<layout title="Blog · Posts" src="main.html">
+    
+    <div class="flex items-center justify-center w-full mx-auto mb-12 bg-neutral-800">
+        <nav class="inline-flex justify-between max-w-7xl w-full mx-auto px-3.5 py-2">
+            <ol class="flex items-center mb-3 w-full space-x-1 text-xs text-neutral-300  [&_.active-breadcrumb]:font-medium sm:mb-0">
+                <li class="flex items-center h-full">
+                    <a href="/" class="py-1 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" /><path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" /></svg></a>
+                </li>
+                <svg class="w-5 h-5 text-gray-400/70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="none"><path d="M10 8.013l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+                <li><span class="inline-flex items-center py-1 font-normal rounded cursor-default active-breadcrumb focus:outline-none">Blog</span></li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="mx-auto max-w-7xl">
+
+        <main class="max-w-2xl px-5 mx-auto text-slate-100">
+            <div class="grid grid-cols-1 mb-32 md:grid-cols-1 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32">
+                <ForEach content="blog" as="post" count="{count}">
+
+                    <div class="relative border border-transparent border-dashed cursor-pointer p-7 group" onClick="window.location='{post.link}'">
+                        <div class="relative z-30 duration-300 ease-out">
+                            <h2 class="flex items-center mb-3">
+                                <a href="{post.link}" class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">{post.title}</a>
+                                <svg class="group-hover:translate-x-0 flex-shrink-0 translate-y-0.5 -translate-x-1 w-2.5 h-2.5 stroke-current ml-1 transition-all ease-in-out duration-200  transform" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><g id="svg" transform="translate(0.666667, 2.333333)" stroke="currentColor" stroke-width="2.4"><g><polyline class="transition-all duration-200 ease-out opacity-0 delay-0 group-hover:opacity-100" points="5.33333333 0 10.8333333 5.5 5.33333333 11"></polyline><line class="transition-all duration-200 ease-out transform -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:ml-0" x1="10.8333333" y1="5.5" x2="0.833333333" y2="5.16666667"></line></g></g></g></svg>
+                            </h2>
+                            <p class="text-base text-neutral-400 dark:text-neutral-400">
+                                <span>{post.excerpt}</span>
+                            </p>
+                            <div class="flex items-center mt-2.5">
+                                <img src="{post.authorPicture}" class="mr-4 rounded-full w-7 h-7" alt="{post.authorName}">
+                                <div class="text-base font-medium">{post.authorName} on {post.dateFormatted}</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </ForEach>
+            </div>
+        </main>
+    </div>
+
+</layout>
